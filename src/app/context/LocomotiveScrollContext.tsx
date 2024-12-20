@@ -19,15 +19,6 @@ export function LocomotiveScrollProvider({
   const scrollRef = useRef<LocomotiveScroll | null>(null);
 
   useEffect(() => {
-    if (!scrollRef.current) {
-      scrollRef.current = new LocomotiveScroll({
-        smooth: true,
-        multiplier: 1,
-        class: "is-revealed",
-        initPosition: { x: 0, y: 0 },
-      });
-    }
-
     return () => {
       if (scrollRef.current) {
         scrollRef.current.destroy();
