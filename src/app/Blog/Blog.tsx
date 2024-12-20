@@ -5,7 +5,7 @@ import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 import { useEffect, useState } from "react";
 import Footer from "../Footer";
-
+import { useLocomotiveScroll } from "../context/LocomotiveScrollContext";
 import { FloatingNav } from "../components/ui/floating-navbar";
 import { navItems } from "../utils/Constants/NavItem";
 import { blogPosts, BlogCardProps } from "../utils/Constants/Blog";
@@ -13,11 +13,21 @@ import { blogPosts, BlogCardProps } from "../utils/Constants/Blog";
 import React from "react";
 
 const Blog = () => {
+  const { scroll } = useLocomotiveScroll();
   return (
     <main className="min-h-screen ">
       <FloatingNav navItems={navItems} />
-      <BlogPageHeroSection />
-      <section className="container mx-auto w-[95vw]  lg:w-[83.333333vw] py-12">
+      <BlogPageHeroSection
+        data-scroll
+        data-scroll-speed={".1"}
+        data-scroll-delay="0.1"
+      />
+      <section
+        className="container mx-auto w-[95vw]  lg:w-[83.333333vw] py-0 md:py-12 "
+        data-scroll
+        data-scroll-speed={".2"}
+        data-scroll-delay="0.1"
+      >
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {blogPosts.map((post, index) => (
             <BlogCard
@@ -26,6 +36,7 @@ const Blog = () => {
               description={post.description}
               image={post.image}
               href={post.href}
+              index={index}
             />
           ))}
         </div>
@@ -59,6 +70,9 @@ function BlogPageHeroSection() {
 
   return (
     <div
+      data-scroll
+      data-scroll-speed="0.2"
+      data-scroll-delay=".1"
       className={`w-full mx-auto py-14 md:py-12 lg:py-24
     ${isWideScreen ? "px-4 " : ""}
     `}
@@ -95,7 +109,13 @@ function BlogPageHeroSection() {
   );
 }
 
-export function BlogCard({ title, description, image, href }: BlogCardProps) {
+export function BlogCard({
+  title,
+  description,
+  image,
+  href,
+  index,
+}: BlogCardProps) {
   const [isWideScreen, setIsWideScreen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
@@ -125,7 +145,7 @@ export function BlogCard({ title, description, image, href }: BlogCardProps) {
           fill
           className={`object-cover 
          
-           ${isMobile ? "rounded-6xl" : "rounded-xl"}     
+           ${isMobile ? "rounded-3xl" : "rounded-xl"}     
           transition-all duration-1000 hover:rounded-6xl
           
           `}

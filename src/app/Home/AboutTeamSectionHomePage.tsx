@@ -2,6 +2,7 @@ import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 import { teamMembers } from "../utils/Constants/AboutTeamSectionHomeLeader";
+import { motion } from "framer-motion";
 export default function TeamSection() {
   return (
     <div className="relative z-20 bg-white min-h-screen ">
@@ -9,7 +10,11 @@ export default function TeamSection() {
         <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 lg:grid-rows-2 w-full max-w-[90vw] gap-4 lg:gap-0 lg:h-[80vh]  ">
           {/* Content Area (spans grid areas 1, 2, and 5) */}
           <div className="sm:col-span-2 lg:row-span-1 bg-gray-50 p-6 lg:p-16 flex flex-col rounded-3xl lg:rounded-none">
-            <div>
+            <motion.div
+              data-scroll
+              data-scroll-speed="0.1"
+              data-scroll-delay="0.1"
+            >
               <h2 className="text-3xl lg:text-5xl font-bold mb-4 lg:mb-6">
                 Meet the brain
               </h2>
@@ -18,9 +23,9 @@ export default function TeamSection() {
                 truly professional website, landing page or admin panel for your
                 SaaS.
               </p>
-            </div>
+            </motion.div>
           </div>
-          <div className="sm:col-span-2 lg:col-start-1 lg:row-start-2 bg-gray-50 p-6 lg:p-12 flex items-end rounded-3xl lg:rounded-none">
+          <motion.div className="sm:col-span-2 lg:col-start-1 lg:row-start-2 bg-gray-50 p-6 lg:p-12 flex items-end rounded-3xl lg:rounded-none">
             <Link
               href="/AboutUs"
               className="inline-flex items-center text-lg font-medium hover:opacity-80 transition-opacity"
@@ -28,7 +33,7 @@ export default function TeamSection() {
               See All Members
               <ArrowUpRight className="ml-2 h-5 w-5" />
             </Link>
-          </div>
+          </motion.div>
 
           {/* Team Member Cards */}
           <div className="lg:col-start-3 lg:row-start-1 ">
@@ -79,10 +84,15 @@ function TeamMemberCard({ name, role, imageUrl, index }: TeamMemberProps) {
             group-hover:scale-110`}
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-      <div className="absolute bottom-0 left-0 p-6 text-white">
+      <motion.div
+        className="absolute bottom-0 left-0 p-6 text-white"
+        data-scroll
+        data-scroll-speed="0.03"
+        data-scroll-delay="0.1"
+      >
         <h3 className="text-xl lg:text-2xl font-semibold">{name}</h3>
         <p className="text-sm text-gray-200">{role}</p>
-      </div>
+      </motion.div>
     </div>
   );
 }

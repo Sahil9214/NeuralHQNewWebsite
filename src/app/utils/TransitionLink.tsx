@@ -2,6 +2,7 @@
 import Link from "next/link";
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
+import { useLocomotiveScroll } from "../context/LocomotiveScrollContext";
 
 interface TransitionLinkProps
   extends Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, "href"> {
@@ -16,6 +17,7 @@ export const TransitionLink: React.FC<TransitionLinkProps> = ({
 }) => {
   const router = useRouter();
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const { scroll } = useLocomotiveScroll();
 
   const handleTransition = async (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
@@ -26,6 +28,11 @@ export const TransitionLink: React.FC<TransitionLinkProps> = ({
     const background = document.createElement("div");
     background.className = "page-transition-background";
     document.body.appendChild(background);
+
+    // Stop locomotive scroll
+    if (scroll) {
+      scroll.stop();
+    }
 
     // Start transition
     body?.classList.add("page-transition-enter");
@@ -41,6 +48,12 @@ export const TransitionLink: React.FC<TransitionLinkProps> = ({
     setTimeout(() => {
       body?.classList.remove("page-transition-enter");
       background.classList.remove("active");
+
+      // Restart locomotive scroll after transition
+      if (scroll) {
+        scroll.scrollTo(0, { duration: 0 });
+      }
+
       setTimeout(() => {
         background.remove();
         setIsTransitioning(false);

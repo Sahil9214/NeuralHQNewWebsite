@@ -3,6 +3,7 @@ export interface BlogCardProps {
   description: string;
   image: string;
   href: string;
+  index?: number;
 }
 
 export const blogPosts: BlogCardProps[] = [
