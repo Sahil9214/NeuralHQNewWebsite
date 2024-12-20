@@ -1,0 +1,50 @@
+.icon-row {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .icon-container {
+    display: flex;
+    gap: 0.1rem;
+  }
+  
+  .icon-wrapper {
+    flex: 0 0 calc(100% / 4 - 1.5rem);
+  }
+  
+  @keyframes moveRight {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(calc(-100% / 5)); }
+  }
+  
+  @keyframes moveLeft {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(calc(100% / 4)); }
+  }
+  
+  .animate-right .icon-container {
+    animation: moveRight 8s ease-in-out infinite;
+  }
+  
+  .animate-left .icon-container {
+    animation: moveLeft 8s ease-in-out infinite;
+  }
+  
+  .hidden-icons {
+    position: absolute;
+    top: 0;
+    display: flex;
+    gap: 2rem;
+  }
+  
+  .hidden-right {
+    right: 0;
+    transform: translateX(100%);
+  }
+  
+  .hidden-left {
+    left: 0;
+    transform: translateX(-100%);
+  }
+  
+  
