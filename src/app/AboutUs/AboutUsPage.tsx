@@ -5,76 +5,8 @@ import { FloatingNav } from "../components/ui/floating-navbar";
 import Footer from "../Footer";
 import { navItems } from "../utils/Constants/NavItem";
 import Link from "next/link";
+import { teamMembers } from "../utils/Constants/AboutUs";
 
-interface TeamMember {
-  name: string;
-  role: string;
-  image: string;
-  linkedin?: string;
-}
-
-const teamMembers: TeamMember[] = [
-  {
-    name: "Sandeep Gupta",
-    role: "Chief Executive Officer",
-    image: "/assets/Images/sandeep.jpg",
-    linkedin: "https://www.linkedin.com/in/sandeep-gupta-847b4150/",
-  },
-  {
-    name: "Amrit Anand",
-    role: "Chief Technology Officer",
-    image: "/assets/Images/amrit.jpg",
-    linkedin: "https://www.linkedin.com/in/amrit-anand-51550315/",
-  },
-  {
-    name: "Mohsin Hasan Khan",
-    role: "Chief Scientist",
-    image: "/assets/Images/Mohsin.jpg",
-    linkedin: "https://www.linkedin.com/in/mohsin-hasan-khan-167167a9/",
-  },
-  {
-    name: "Prasanna Kakhandaki",
-    role: "Chief Product Officer",
-    image: "/assets/Images/prasanna.png",
-    linkedin: "https://www.linkedin.com/in/prasannapk/",
-  },
-  {
-    name: "Samarth Gupta",
-    role: "Head of Growth & Marketing",
-    image: "/assets/Images/Samarth2.jpg",
-    linkedin: "https://www.linkedin.com/in/samarth-gupta-iitk/",
-  },
-  {
-    name: "Janhavi Singh",
-    role: "Deep Learning Researcher",
-    image: "/assets/Images/janhavi.jpg",
-    linkedin: "https://www.linkedin.com/in/janhavi023/",
-  },
-  {
-    name: "Revanth Mk",
-    role: "Machine Learning Engineer",
-    image: "/assets/Images/revant.jpg",
-    linkedin: "https://www.linkedin.com/in/revanth-mk-1a9013157/",
-  },
-  {
-    name: "Rushikesh Bhomale",
-    role: "Data Engineer",
-    image: "/assets/Images/rushikesh.jpg",
-    linkedin: "https://www.linkedin.com/in/rushikesh-bhomale-aa29a3158/",
-  },
-  {
-    name: "Utkarsh Singhal",
-    role: "Software Engineer",
-    image: "/assets/Images/utkarsh.jpg",
-    linkedin: "https://www.linkedin.com/in/utkarsh-singhal-3171b7182/",
-  },
-  {
-    name: "Deependra Kumar",
-    role: "Software Engineer",
-    image: "/assets/Images/deependra.jpg",
-    linkedin: "https://www.linkedin.com/in/deependrakrdk/",
-  },
-];
 export default function AboutUsPage() {
   return (
     <div>
@@ -87,7 +19,7 @@ export default function AboutUsPage() {
 
 function AboutUsPageOurTeamSection() {
   return (
-    <section className=" py-2 lg:py-16 ">
+    <section className=" py-2  lg:py-16 ">
       <div className="mx-auto max-w-[1300px] px-4 ">
         <div className="mb-12 lg:w-[70vw] rounded-[40px]  mx-auto bg-gradient-to-r from-[#CCE2FB] to-[#FADCEA] py-8 md:p-10">
           <div className="flex flex-col-reverse md:flex-row gap-x-8 gap-y-2 w-full mx-auto ">
@@ -177,7 +109,7 @@ function AboutUsPageHeroSection() {
   return (
     <main>
       <FloatingNav navItems={navItems} />
-      <div className="mx-auto max-w-[1200px] py-12 px-4 md:py-18 lg:px-4 lg:py-24 ">
+      <div className="mx-auto max-w-[1200px] py-12 mt-12 px-4 md:py-18 lg:px-4 lg:py-24 ">
         <div className="flex flex-col gap-16 lg:flex-row ">
           <div className="w-full md:w-[50vw] relative h-[50vh] lg:h-[400px]  lg:w-[491px]  mx-auto">
             {/* Image 1 - Top Left */}

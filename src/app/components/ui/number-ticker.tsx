@@ -26,7 +26,7 @@ const NumberTicker: React.FC<NumberTickerProps> = ({
   }, [value, duration]);
 
   return (
-    <span className="font-extrabold text-4xl sm:text-6xl md:text-7xl font-lato">
+    <span className="font-extrabold text-5xl sm:text-6xl md:text-7xl font-lato ">
       {displayValue}%
     </span>
   );

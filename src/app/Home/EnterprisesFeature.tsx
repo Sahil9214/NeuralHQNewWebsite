@@ -52,7 +52,7 @@ export default function EnterpriseFeatures() {
                 transition={{ delay: index * 0.1 }}
                 className="relative"
               >
-                <div className=" rounded-lg py-2 h-full sm:h-[80vh] flex flex-col justify-between overflow-hidden  md:h-auto">
+                <div className=" rounded-lg py-2 h-full sm:h-[80vh] flex flex-col justify-between overflow-hidden  md:h-auto ">
                   <div className="space-y-2">
                     <div
                       className="relative aspect-[255/282] w-full max-w-[255px] mx-auto 
@@ -62,15 +62,15 @@ export default function EnterpriseFeatures() {
                         src={feature.image}
                         alt={feature.title}
                         fill
-                        className={`object-contain ${
+                        className={`object-contain  ${
                           index === 0
-                            ? "mt-14 z-50"
+                            ? "lg:mt-14 lg:z-50"
                             : index === 1
-                            ? "mt-6"
+                            ? "lg:mt-6"
                             : index === 2
-                            ? "mt-12"
+                            ? "lg:mt-12"
                             : index === 3
-                            ? "mt-12"
+                            ? "lg:mt-12"
                             : "inline-block"
                         }`}
                         sizes="(max-width: 768px) 100vw, (max-width: 1440px) 17.708vw"
@@ -79,10 +79,10 @@ export default function EnterpriseFeatures() {
 
                     <div
                       className=" rounded-lg p-4 text-black opacity-80 
-                   
+                      
                       w-full sm:w-auto  h-full
                       
-                      flex flex-col justify-around"
+                      lg:flex flex-col lg:justify-around"
                     >
                       <h3
                         className="text-gray-800 font-extrabold
@@ -93,7 +93,7 @@ export default function EnterpriseFeatures() {
                         {feature.title}
                       </h3>
                       <p
-                        className="text-gray-600 md:mb-9
+                        className="text-gray-600 mt-0 mb-0 md:mb-9 
                         text-base sm:text-lg lg:text-[clamp(14px,1.3vw,18px)] lg:mt-[1.7vw]
                         leading-relaxed sm:leading-relaxed lg:leading-[clamp(22px,1.944vw,28px)]"
                       >

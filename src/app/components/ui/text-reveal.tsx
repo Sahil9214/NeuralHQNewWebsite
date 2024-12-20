@@ -36,8 +36,8 @@ const TextRevealByWord: FC<TextRevealByWordProps> = ({ text, className }) => {
       //     "linear-gradient(167.89deg, #D7DAF9 24.96%, rgba(249, 215, 216, 0) 50.59%)",
       // }}
     >
-      <div className="sticky top-0 mx-auto flex h-[50%] max-w-[80vw] items-center bg-transparent px-[1rem] py-[5rem] ">
-        <p className="flex flex-wrap p-5 text-2xl font-bold text-black dark:text-white/20 md:p-8 md:text-3xl lg:p-10 lg:text-4xl xl:text-5xl ">
+      <div className="sticky top-0 mx-auto  flex h-[50%] md:max-w-[80vw] lg:max-w-[70vw] xl:max-w-[65vw]  items-center bg-transparent px-[1rem] py-[5rem] ">
+        <p className="flex flex-wrap p-5  text-[20px] font-bold text-black dark:text-white/20 md:p-8 md:text-2xl lg:p-10 lg:text-4xl xl:text-4xl md:leading-[3rem]  ">
           {words.map((word, i) => {
             const start = i / words.length;
             const end = start + 1 / words.length;

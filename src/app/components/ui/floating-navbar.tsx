@@ -4,43 +4,12 @@ import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 import { useRouter } from "next/navigation";
-import { ChevronDown, PieChart, Sparkles, Shield } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-interface Solution {
-  name: string;
-  description: string;
-  icon: React.ElementType;
-  link: string;
-}
 
-interface NavItem {
-  name: string;
-  link: string;
-  solutions?: Solution[];
-}
-
-const solutions: Solution[] = [
-  {
-    name: "Intelligent Catalogue",
-    description: "AI-powered tagging and catalog enhancement for e-commerce",
-    icon: PieChart,
-    link: "#intelligent-catalogue",
-  },
-  {
-    name: "Visual Generation",
-    description: "Transform product imagery with AI-powered tools",
-    icon: Sparkles,
-    link: "#visual-catalogue",
-  },
-  {
-    name: "Semantic Discovery",
-    description: "Context-aware search and recommendations",
-    icon: Shield,
-    link: "#contextual-search",
-  },
-];
-
+import { NavItem } from "@/app/utils/Constants/NavItem";
+import { solutions } from "@/app/utils/Constants/NavItem";
 export const FloatingNav = ({
   navItems,
   className,
@@ -79,7 +48,7 @@ export const FloatingNav = ({
       window.addEventListener("scroll", updateNavbar);
       return () => window.removeEventListener("scroll", updateNavbar);
     } else {
-      setWidth("68%");
+      setWidth("80%");
       setNavGap("0.75rem");
     }
   }, [isLargeScreen]);
@@ -105,7 +74,8 @@ export const FloatingNav = ({
   if (!isMounted) {
     return null;
   }
-
+  console.log(window.innerWidth, "innerWidth");
+  console.log(isLargeScreen, "isLargeScreen");
   return (
     <>
       <motion.div
@@ -114,7 +84,7 @@ export const FloatingNav = ({
           className
         )}
         style={{
-          width: isLargeScreen ? width : "68%",
+          width: isLargeScreen ? width : "80%",
           transform: "translateX(-50%)",
           maxWidth: isLargeScreen ? "none" : "360px",
         }}
@@ -131,7 +101,7 @@ export const FloatingNav = ({
           </Link>
         </motion.div>
         <div
-          className="hidden md:flex items-center justify-center"
+          className="hidden lg:flex items-center justify-center"
           style={{ gap: navGap }}
         >
           <div className="relative group">
@@ -189,7 +159,7 @@ export const FloatingNav = ({
           </Link>
         </motion.div>
         {!isLargeScreen && (
-          <button className="md:hidden" onClick={toggleMenu}>
+          <button className="lg:hidden" onClick={toggleMenu}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"
