@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
-
+import { TransitionLink } from "@/app/utils/TransitionLink";
 import { useRouter } from "next/navigation";
 import { ChevronDown } from "lucide-react";
 import Image from "next/image";
@@ -91,14 +91,14 @@ export const FloatingNav = ({
       >
         <motion.div className="flex items-center space-x-2">
           <div className="w-5 h-5 lg:w-6 lg:h-6  rounded-full"></div>
-          <Link href="/">
+          <TransitionLink href="/">
             <Image
               src="/assets/Images/logo.png"
               alt="logo"
               width={100}
               height={100}
             />
-          </Link>
+          </TransitionLink>
         </motion.div>
         <div
           className="hidden lg:flex items-center justify-center"
@@ -138,13 +138,9 @@ export const FloatingNav = ({
             </div>
           </div>
           {navItems.slice(1, 3).map((navItem: NavItem, idx: number) => (
-            <Link
-              key={`nav-item-${idx}`}
-              href={navItem.link}
-              className="text-xs lg:text-sm font-medium text-gray-600 hover:text-[#494BF2] transition-colors"
-            >
+            <TransitionLink key={`nav-item-${idx}`} href={navItem.link}>
               {navItem.name}
-            </Link>
+            </TransitionLink>
           ))}
         </div>
         <motion.div>

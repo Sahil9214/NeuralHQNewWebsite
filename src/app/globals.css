@@ -24,3 +24,50 @@ html.has-scroll-dragging {
 [data-scroll-container] {
   min-height: 100vh;
 }
+.page-transition {
+  opacity: 0;
+  background: #F7F5F2;
+  transform: translateY(40px);
+  filter: blur(12px);
+}
+
+/* Add these styles for smooth transitions */
+.page-transition-enter {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.page-transition-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 800ms ease-out, transform 800ms ease-out;
+}
+
+.page-transition-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.page-transition-exit-active {
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 800ms ease-in, transform 800ms ease-in;
+}
+
+/* Add a fade effect to the background */
+.page-transition-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #F7F5F2;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 600ms ease;
+}
+
+.page-transition-background.active {
+  opacity: 1;
+}

@@ -1,11 +1,11 @@
 export const teamMembers = [
   {
-    name: "Jhanvi Singh",
+    name: "Janhvi Singh",
     role: "Deep Learning Researcher",
     imageUrl: "/assets/Images/janhaviAboutHome.png",
   },
   {
-    name: "Revant MK ",
+    name: "Revanth MK ",
     role: "Machine Learning Engineer",
     imageUrl: "/assets/Images/revantAboutHome.png",
   },

@@ -20,26 +20,34 @@ export default function AboutUsPage() {
 function AboutUsPageOurTeamSection() {
   return (
     <section className=" py-2  lg:py-16 ">
-      <div className="mx-auto max-w-[1300px] px-4 ">
-        <div className="mb-12 lg:w-[70vw] rounded-[40px]  mx-auto bg-gradient-to-r from-[#CCE2FB] to-[#FADCEA] py-8 md:p-10">
-          <div className="flex flex-col-reverse md:flex-row gap-x-8 gap-y-2 w-full mx-auto ">
-            <div className="px-4 py-6 md:w-1/2  ">
+      <div className="mx-auto max-w-[1300px] px-4  ">
+        <div className="mb-12 lg:w-[67vw] rounded-[40px]   mx-auto bg-gradient-to-r from-[#CCE2FB] to-[#FADCEA] py-8 md:px-4">
+          <div className="flex flex-col-reverse md:flex-row gap-x-2 gap-y-2 w-full mx-auto  ">
+            <div className="px-4 py-2 md:w-[45%]  ">
               <h2 className="mb-2 font-quicksand text-2xl font-bold bg-gradient-to-r from-[#6265C6] to-[#543BD9] bg-clip-text text-transparent">
                 Our team
               </h2>
               <div className="h-1 w-9 bg-white mb-4" />
-              <p className="text-baselg:text-lg">
-                We believe in the transformative power of technology to solve
-                complex problems, enhance human creativity, and drive forward
-                innovation in unprecedented ways. Our team consists passionate
-                AI researchers, data scientists, engineers & visionaries
-                dedicated to pushing the boundaries of what&apos;s possible with
-                AI.
+              <p className="text-base lg:text-lg">
+                <span>
+                  {" "}
+                  We believe in the transformative power of technology to solve
+                  complex problems, enhance human creativity, and drive forward
+                  innovation in unprecedented ways.
+                </span>
+                <br />
+                <br />
+                <span>
+                  {" "}
+                  Our team consists of passionate AI researchers, data
+                  scientists, engineers & visionaries dedicated to pushing the
+                  boundaries of what&apos;s possible with AI.
+                </span>
               </p>
             </div>
-            <div className="px-4 md:px-2 lg:px-4 md:w-1/2 md:h-[50vh]  lg:w-1/2 flex justify-center lg:justify-end ">
+            <div className=" md:px-0 md:w-[55%] md:h-[50vh]  lg:w-[55%] flex justify-center lg:justify-end ">
               <Image
-                src="/assets/Images/NeuralHQTeam.jpg"
+                src="/assets/Images/MainTeamPhoto.jpg"
                 width={422}
                 height={281}
                 alt="Team"
@@ -49,7 +57,7 @@ function AboutUsPageOurTeamSection() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4 ">
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4 0 lg:py-12">
           {teamMembers.map((member, index) => (
             <div key={index} className="flex flex-col items-center">
               <div className="group relative mb-5 h-[270px] w-[270px]">
@@ -109,7 +117,7 @@ function AboutUsPageHeroSection() {
   return (
     <main>
       <FloatingNav navItems={navItems} />
-      <div className="mx-auto max-w-[1200px] py-12 mt-12 px-4 md:py-18 lg:px-4 lg:py-24 ">
+      <div className="mx-auto max-w-[1200px] py-12 mt-12 px-4 md:py-18 lg:px-4 lg:pt-24 lg:pb-10  ">
         <div className="flex flex-col gap-16 lg:flex-row ">
           <div className="w-full md:w-[50vw] relative h-[50vh] lg:h-[400px]  lg:w-[491px]  mx-auto">
             {/* Image 1 - Top Left */}

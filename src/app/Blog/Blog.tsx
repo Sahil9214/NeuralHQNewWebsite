@@ -8,87 +8,16 @@ import Footer from "../Footer";
 
 import { FloatingNav } from "../components/ui/floating-navbar";
 import { navItems } from "../utils/Constants/NavItem";
-interface BlogCardProps {
-  title: string;
-  description: string;
-  image: string;
-  href: string;
-}
-
-const blogPosts = [
-  {
-    title: "AI-Powered Search Revolution",
-    description:
-      "A deep dive into how AI is transforming the way businesses retrieve and utilize data...",
-    image: "/assets/Images/Blog image9.png",
-    href: "/blog/ai-search",
-  },
-  {
-    title: "Conversational AI is the Future of Customer Support",
-    description:
-      "Explore how conversational AI is reshaping customer support across industries...",
-    image: "/assets/Images/Blog image9 (2).png",
-    href: "/blog/conversational-ai",
-  },
-  {
-    title: "Personalized Experiences with AI",
-    description:
-      "Learn how AI-powered personalization engines are creating unique...",
-    image: "/assets/Images/Blog image9 (3).png",
-    href: "/blog/personalized-ai",
-  },
-  {
-    title: "Personalized Experiences with AI",
-    description:
-      "Learn how AI-powered personalization engines are creating unique...",
-    image: "/assets/Images/Blog image9 (4).png",
-    href: "/blog/personalized-ai",
-  },
-  {
-    title: "Personalized Experiences with AI",
-    description:
-      "Learn how AI-powered personalization engines are creating unique...",
-    image: "/assets/Images/Blog image9 (5).png",
-    href: "/blog/personalized-ai",
-  },
-  {
-    title: "Personalized Experiences with AI",
-    description:
-      "Learn how AI-powered personalization engines are creating unique...",
-    image: "/assets/Images/Blog image9 (6).png",
-    href: "/blog/personalized-ai",
-  },
-  {
-    title: "Personalized Experiences with AI",
-    description:
-      "Learn how AI-powered personalization engines are creating unique...",
-    image: "/assets/Images/Blog image9 (7).png",
-    href: "/blog/personalized-ai",
-  },
-  {
-    title: "Personalized Experiences with AI",
-    description:
-      "Learn how AI-powered personalization engines are creating unique...",
-    image: "/assets/Images/Blog image9 (8).png",
-    href: "/blog/personalized-ai",
-  },
-  {
-    title: "Personalized Experiences with AI",
-    description:
-      "Learn how AI-powered personalization engines are creating unique...",
-    image: "/assets/Images/Blog image9 (10).png",
-    href: "/blog/personalized-ai",
-  },
-];
+import { blogPosts, BlogCardProps } from "../utils/Constants/Blog";
 
 import React from "react";
 
 const Blog = () => {
   return (
-    <main className="min-h-screen bg-white ">
+    <main className="min-h-screen ">
       <FloatingNav navItems={navItems} />
       <BlogPageHeroSection />
-      <section className="container mx-auto w-[95vw]  lg:w-[83.333333vw]">
+      <section className="container mx-auto w-[95vw]  lg:w-[83.333333vw] py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {blogPosts.map((post, index) => (
             <BlogCard
@@ -130,7 +59,7 @@ function BlogPageHeroSection() {
 
   return (
     <div
-      className={`w-full mx-auto py-8 md:py-12 lg:py-24
+      className={`w-full mx-auto py-14 md:py-12 lg:py-24
     ${isWideScreen ? "px-4 " : ""}
     `}
     >
@@ -186,6 +115,7 @@ export function BlogCard({ title, description, image, href }: BlogCardProps) {
     // Cleanup
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+  console.log(isMobile, "isMobileValue");
   return (
     <div className="flex flex-col space-y-4 ">
       <div className="relative aspect-[4/3] w-full overflow-hidden ">
@@ -195,7 +125,7 @@ export function BlogCard({ title, description, image, href }: BlogCardProps) {
           fill
           className={`object-cover 
          
-           ${isMobile ? "rounded-3xl" : "rounded-xl"}     
+           ${isMobile ? "rounded-6xl" : "rounded-xl"}     
           transition-all duration-1000 hover:rounded-6xl
           
           `}
@@ -207,7 +137,9 @@ export function BlogCard({ title, description, image, href }: BlogCardProps) {
         href={href}
         className="inline-flex items-center text-indigo-600 hover:text-indigo-700"
       >
-        Read more
+        <button className="text-indigo-600 hover:text-indigo-700">
+          Read more
+        </button>
         <ChevronRight className="ml-1 h-4 w-4" />
       </Link>
     </div>

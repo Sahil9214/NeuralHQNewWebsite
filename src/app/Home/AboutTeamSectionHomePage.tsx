@@ -22,7 +22,7 @@ export default function TeamSection() {
           </div>
           <div className="sm:col-span-2 lg:col-start-1 lg:row-start-2 bg-gray-50 p-6 lg:p-12 flex items-end rounded-3xl lg:rounded-none">
             <Link
-              href="#"
+              href="/AboutUs"
               className="inline-flex items-center text-lg font-medium hover:opacity-80 transition-opacity"
             >
               See All Members
