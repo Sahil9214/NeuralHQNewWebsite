@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Quicksand, Lato } from "next/font/google";
+import { Quicksand } from "next/font/google";
+import { LocomotiveScrollProvider } from "./context/LocomotiveScrollContext";
 
 const quicksand = Quicksand({
   subsets: ["latin"],
@@ -9,12 +10,12 @@ const quicksand = Quicksand({
   variable: "--font-quicksand",
 });
 
-const lato = Lato({
-  subsets: ["latin"],
-  weight: ["300", "400", "700"],
-  display: "swap",
-  variable: "--font-lato",
-});
+// const lato = Lato({
+//   subsets: ["latin"],
+//   weight: ["300", "400", "700"],
+//   display: "swap",
+//   variable: "--font-lato",
+// });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -27,8 +28,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${quicksand.variable} ${lato.variable}`}>
-      <body className="font-quicksand font-lato antialiased">{children}</body>
+    <html lang="en" className={`${quicksand.variable} `}>
+      <body className="font-quicksand  antialiased">
+        <LocomotiveScrollProvider>
+          <main data-scroll-container>{children}</main>
+        </LocomotiveScrollProvider>
+      </body>
     </html>
   );
 }

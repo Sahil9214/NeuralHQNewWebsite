@@ -12,7 +12,7 @@ import { TextRevealByWordDiv } from "./components/ui/text-reveal";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen">
       <FloatingNav navItems={navItems} />
       <HeroSection />
       <div className="relative">

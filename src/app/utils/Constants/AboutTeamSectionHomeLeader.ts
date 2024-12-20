@@ -2,26 +2,26 @@ export const teamMembers = [
   {
     name: "Jhanvi Singh",
     role: "Deep Learning Researcher",
-    imageUrl: "/assets/Images/Component 17.png",
+    imageUrl: "/assets/Images/janhaviAboutHome.png",
   },
   {
     name: "Revant MK ",
     role: "Machine Learning Engineer",
-    imageUrl: "/assets/Images/Component 18.png",
+    imageUrl: "/assets/Images/revantAboutHome.png",
   },
   {
     name: "Rushikesh Bhomale",
     role: "Data Engineer",
-    imageUrl: "/assets/Images/Component 19.png",
+    imageUrl: "/assets/Images/rushikeshAboutHome.png",
   },
   {
     name: "Utkarsh Singhal",
     role: "Software Engineer",
-    imageUrl: "/assets/Images/Component 20.png",
+    imageUrl: "/assets/Images/utkarshAboutHome.png",
   },
   {
     name: "Deependra Kumar",
     role: "Software Engineer",
-    imageUrl: "/assets/Images/Component 21.png",
+    imageUrl: "/assets/Images/DeependraAboutHome.png",
   },
 ];

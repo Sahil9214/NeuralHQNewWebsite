@@ -47,10 +47,10 @@ export default function ExpertiseSection() {
   return (
     <section className="max-w-7xl mx-auto px-4 py-16 sm:px-6 lg:px-8 min-h-screen">
       <div className="text-center mb-16">
-        <h2 className="text-2xl sm:text-3xl lg:text-[3vw]  font-medium">
+        <h1 className="text-2xl sm:text-3xl lg:text-[3vw] 2xl:text-[2.4vw] lg:leading-[64px] mb-4 font-semibold mb-4">
           Our <span className="text-[#7C3AED]">expertise</span>
-        </h2>
-        <p className="text-base sm:text-xl lg:text-[1.6vw] leading-normal lg:leading-8 text-gray-600 font-normal mt-4">
+        </h1>
+        <p className="text-base sm:text-xl lg:text-[1.6vw] leading-normal lg:leading-8 text-gray-600 font-normal">
           Lorem ipsum dolor sit amet consectetur. Sed euismod quis mauris
           tincidunt adipiscing et. Eleifend leo.
         </p>

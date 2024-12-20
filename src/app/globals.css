@@ -2,8 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  background-color: #f7f5f2;
+}
+/* Add these styles */
+html.has-scroll-smooth {
+  overflow: hidden;
+}
 
+html.has-scroll-dragging {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
 
+.has-scroll-smooth body {
+  overflow: hidden;
+}
 
-
-
+[data-scroll-container] {
+  min-height: 100vh;
+}

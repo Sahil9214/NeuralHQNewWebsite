@@ -4,9 +4,9 @@ import Link from "next/link";
 import { teamMembers } from "../utils/Constants/AboutTeamSectionHomeLeader";
 export default function TeamSection() {
   return (
-    <div className="relative z-20 bg-white min-h-screen">
+    <div className="relative z-20 bg-white min-h-screen ">
       <div className="min-h-screen max-w-8xl mx-auto flex justify-center items-center p-4 lg:p-0 ">
-        <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 lg:grid-rows-2 w-full max-w-[90vw] gap-4 lg:gap-0">
+        <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 lg:grid-rows-2 w-full max-w-[90vw] gap-4 lg:gap-0 lg:h-[80vh]  ">
           {/* Content Area (spans grid areas 1, 2, and 5) */}
           <div className="sm:col-span-2 lg:row-span-1 bg-gray-50 p-6 lg:p-16 flex flex-col rounded-3xl lg:rounded-none">
             <div>
@@ -67,16 +67,16 @@ function TeamMemberCard({ name, role, imageUrl, index }: TeamMemberProps) {
      ${index === 8 ? "rounded-br-2xl " : ""}
     `}
     >
-      <div className="absolute inset-0 bg-gray-200 flex items-center justify-center">
+      {/* <div className="absolute inset-0 bg-gray-200 flex items-center justify-center">
         <span className="text-gray-400">Loading...</span>
-      </div>
+      </div> */}
       <Image
         src={imageUrl}
         alt={`${name} - ${role}`}
         fill
-        className={`object-cover transition-transform duration-300 
+        className={`object-contain transition-transform duration-500 
            
-            group-hover:scale-105`}
+            group-hover:scale-110`}
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
       <div className="absolute bottom-0 left-0 p-6 text-white">

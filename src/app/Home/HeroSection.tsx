@@ -8,7 +8,7 @@ import BlurIn from "../components/magicui/blur-in";
 import { subtitleWords } from "../utils/Constants/HomeHeroSectionSubtitleWord";
 export function HeroSection() {
   return (
-    <section className="relative h-screen flex items-center justify-center overflow-hidden ">
+    <section className="bg-white relative h-screen flex items-center justify-center overflow-hidden ">
       <AnimatedGridPattern
         className="absolute inset-0 z-0 opacity-50 [mask-image:radial-gradient(100%_100%_at_top_center,white,transparent)]"
         width={32}

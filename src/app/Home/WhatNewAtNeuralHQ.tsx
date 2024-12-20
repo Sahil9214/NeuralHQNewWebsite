@@ -4,52 +4,8 @@ import React, { useState, useEffect, useCallback } from "react";
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
-import Link from "next/link";
-
-const posts = [
-  {
-    id: 1,
-    image: "/assets/Images/blogImage1.png",
-    title: "AI-Powered Search Revolution",
-    description:
-      "A deep dive into how AI is transforming the way businesses retrieve and utilize data...",
-  },
-  {
-    id: 2,
-    image: "/assets/Images/blogImage2.png",
-    title: "Conversational AI is the Future of Customer Support",
-    description:
-      "Explore how conversational AI is reshaping customer support across industries...",
-  },
-  {
-    id: 3,
-    image: "/assets/Images/blogImage3.png",
-    title: "Personalized Experiences with AI",
-    description:
-      "Learn how AI-powered personalization engines are creating unique user experiences...",
-  },
-  {
-    id: 4,
-    image: "/assets/Images/Blog image9 (8).png",
-    title: "Personalized Experiences with AI",
-    description:
-      "Learn how AI-powered personalization engines are creating unique user experiences...",
-  },
-  {
-    id: 5,
-    image: "/assets/Images/Blog image9 (8).png",
-    title: "AI-Powered Search Revolution",
-    description:
-      "A deep dive into how AI is transforming the way businesses retrieve and utilize data...",
-  },
-  {
-    id: 6,
-    image: "/assets/Images/Blog image9 (8).png",
-    title: "AI-Powered Search Revolution",
-    description:
-      "A deep dive into how AI is transforming the way businesses retrieve and utilize data...",
-  },
-];
+import { posts } from "../utils/Constants/WhatAtNeuralHQ";
+import Button from "../components/Button/Button";
 
 const WhatNewAtNeuralHQ = () => {
   const [currentIndex, setCurrentIndex] = useState(1);
@@ -100,23 +56,19 @@ const WhatNewAtNeuralHQ = () => {
       </button>
 
       {/* Content Container */}
-      <div className="container mx-auto px-4 w-full md:max-w-[85vw]  ">
+      <div className="container mx-auto px-4 w-full md:max-w-[90vw]  ">
         {/* Header Section */}
-        <div className="flex w-full justify-between items-center mb-16 md:max-w-[80vw] mx-auto ">
+        <div className="flex w-full justify-between items-center mb-16 md:max-w-[80vw] mx-auto  ">
           <h1 className="font-quicksand font-semibold text-[4.5vw] md:text-[3.33vw] leading-[1.3] md:leading-[64px]">
             <span className="text-[#6366F1]">What&apos;s new</span> at Neuralhq?
           </h1>
-          <Link href="/Blog">
-            <button className="px-4 py-2md:w-[12.98vw] md:h-[7vh] border-2 border-[#6366F1] text-[#6366F1] rounded-[16px] hover:bg-[#6366F1] hover:text-white transition-colors duration-300">
-              View blog
-            </button>
-          </Link>
+          <Button link="/Blog" text="View our blog" />
         </div>
 
         {/* Carousel Section */}
         <div className="w-full relative overflow-hidden">
           <div className="flex items-center justify-center w-full md:min-h-[80vh] md:max-w-[80vw] mx-auto ">
-            <div className="flex items-center justify-center gap-x-5  h-[72vh]">
+            <div className="flex items-center justify-center gap-x-5  h-[72vh] ">
               {visiblePosts.map((post, idx) => (
                 <div
                   key={post.id}
@@ -129,7 +81,7 @@ const WhatNewAtNeuralHQ = () => {
                     idx !== 1 ? "hidden md:block" : ""
                   )}
                 >
-                  <div className="relative h-[50%] sm:h-[60%]  lg:h-[40%]  ">
+                  <div className="relative h-[50%]   ">
                     <Image
                       src={post.image}
                       alt={post.title}

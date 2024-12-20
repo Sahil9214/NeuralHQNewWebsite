@@ -31,10 +31,10 @@ const TextRevealByWord: FC<TextRevealByWordProps> = ({ text, className }) => {
     <div
       ref={targetRef}
       className={cn("relative z-0 h-[200vh] w-full", className)}
-      style={{
-        background:
-          "linear-gradient(167.89deg, #D7DAF9 24.96%, rgba(249, 215, 216, 0) 50.59%)",
-      }}
+      // style={{
+      //   background:
+      //     "linear-gradient(167.89deg, #D7DAF9 24.96%, rgba(249, 215, 216, 0) 50.59%)",
+      // }}
     >
       <div className="sticky top-0 mx-auto flex h-[50%] max-w-[80vw] items-center bg-transparent px-[1rem] py-[5rem] ">
         <p className="flex flex-wrap p-5 text-2xl font-bold text-black dark:text-white/20 md:p-8 md:text-3xl lg:p-10 lg:text-4xl xl:text-5xl ">
@@ -89,7 +89,7 @@ export default TextRevealByWord;
 
 export const TextRevealByWordDiv = () => {
   return (
-    <div className="z-10 flex min-h-64 items-center justify-center rounded-lg border bg-white dark:bg-black">
+    <div className="z-10 flex min-h-64 items-center justify-center rounded-lg ">
       <TextRevealByWord text="With Dropbox, you can edit and sign your documents, collaborate👇 on projects and search🔍 across all your apps, and it happens in the same place you securely store all your content. It’s that simple :)" />
     </div>
   );

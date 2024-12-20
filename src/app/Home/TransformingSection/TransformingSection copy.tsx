@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import React from "react";
 
 import "./TransformingSection.css";
@@ -12,9 +13,10 @@ export const TransformingSection = () => {
   });
 
   return (
-    <div className="h-full lg:h-screen max-w-[90vw]  mx-auto  flex items-center justify-center ">
+    <div className="h-full lg:h-screen max-w-[90vw]  mx-auto bg-white flex items-center justify-center border-4 border-red-500">
       <main
-        ref={ref as unknown as React.RefObject<HTMLElement>}
+        //@ts-ignore
+        ref={ref}
         className="container mx-auto px-4 py-8 lg:py-16 max-w-[90vw] lg:max-w-[80vw] xl:max-w-[90vw]  "
       >
         <div className="text-center mb-8 lg:mb-16">
