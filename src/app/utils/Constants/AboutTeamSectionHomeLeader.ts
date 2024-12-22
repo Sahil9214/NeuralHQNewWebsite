@@ -1,6 +1,6 @@
 export const teamMembers = [
   {
-    name: "Janhvi Singh",
+    name: "Janhavi Singh",
     role: "Deep Learning Researcher",
     imageUrl: "/assets/Images/janhaviAboutHome.png",
   },

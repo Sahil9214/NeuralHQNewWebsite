@@ -7,6 +7,7 @@ import { useInView } from "../../hooks/useInView";
 import { TransformingSectionThreshold } from "../../utils/Constants/AnimationConstant";
 import { cards } from "../../utils/Constants/TransformingSection";
 import { useLocomotiveScroll } from "@/app/context/LocomotiveScrollContext";
+import { AnimatedSection } from "@/app/utils/AnimationSection";
 
 export const TransformingSection = () => {
   const [ref, isInView] = useInView({
@@ -67,14 +68,15 @@ export const TransformingSection = () => {
           data-scroll-delay={0.1}
         >
           {cards.map((card, index) => (
-            <CardWithLocoAnimation
-              key={index}
-              card={card}
-              index={index}
-              scroll={scroll}
-              isLargeScreen={isLargeScreen}
-              isInView={!!isInView}
-            />
+            <AnimatedSection key={index} delay={index * 0.2}>
+              <CardWithLocoAnimation
+                card={card}
+                index={index}
+                scroll={scroll}
+                isLargeScreen={isLargeScreen}
+                isInView={!!isInView}
+              />
+            </AnimatedSection>
           ))}
         </motion.div>
       </main>

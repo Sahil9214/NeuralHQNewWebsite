@@ -9,6 +9,8 @@ import Link from "next/link";
 import { teamMembers } from "../utils/Constants/AboutUs";
 import { useLocomotiveScroll } from "../context/LocomotiveScrollContext";
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
+
 export default function AboutUsPage() {
   return (
     <div>
@@ -21,20 +23,28 @@ export default function AboutUsPage() {
 
 function AboutUsPageOurTeamSection() {
   const { scroll } = useLocomotiveScroll();
+  const [scrollSpeed, setScrollSpeed] = useState("0.05");
+
+  useEffect(() => {
+    const handleResize = () => {
+      setScrollSpeed(window.innerWidth > 768 ? "0.2" : "0.05");
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <section className=" py-2  lg:pt-16 " data-scroll-section>
       <div
         className="mx-auto max-w-[1300px] px-4  "
         data-scroll
-        data-scroll-speed="0.2"
+        data-scroll-speed={scrollSpeed}
         data-scroll-delay="0.1"
       >
-        <div
-          className="mb-12 lg:w-[67vw] rounded-[40px]   mx-auto bg-gradient-to-r from-[#CCE2FB] to-[#FADCEA] py-8 md:px-4"
-          data-scroll
-          data-scroll-speed="0.02"
-          data-scroll-delay="0.1"
-        >
+        <div className="mb-12 lg:w-[67vw] rounded-[40px]   mx-auto bg-gradient-to-r from-[#CCE2FB] to-[#FADCEA] py-8 md:px-4">
           <div className="flex flex-col-reverse md:flex-row gap-x-2 gap-y-2 w-full mx-auto  ">
             <div className="px-4 py-2 md:w-[45%]  ">
               <h2 className="mb-2 font-quicksand text-2xl font-bold bg-gradient-to-r from-[#6265C6] to-[#543BD9] bg-clip-text text-transparent">

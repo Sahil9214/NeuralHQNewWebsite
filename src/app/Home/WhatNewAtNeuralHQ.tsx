@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 
 import React, { useState, useEffect, useCallback } from "react";
@@ -6,8 +7,9 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { posts } from "../utils/Constants/WhatAtNeuralHQ";
 import Button from "../components/Button/Button";
-
+import { useLocomotiveScroll } from "../context/LocomotiveScrollContext";
 const WhatNewAtNeuralHQ = () => {
+  const { scroll } = useLocomotiveScroll();
   const [currentIndex, setCurrentIndex] = useState(1);
   const [visiblePosts, setVisiblePosts] = useState<typeof posts>([]);
 
@@ -31,7 +33,12 @@ const WhatNewAtNeuralHQ = () => {
   };
 
   return (
-    <main className="relative z-20 min-h-screen bg-white py-12 ">
+    <main
+      className="relative z-20 min-h-screen bg-white py-12 "
+      data-scroll-container
+      data-scroll-speed=".5"
+      data-scroll-delay=".2"
+    >
       {/* Navigation Buttons */}
       <button
         className="absolute left-2 md:left-12 top-1/2 -translate-y-1/2 flex justify-center items-center rounded-full w-8 h-8 hover:text-white z-10"
@@ -56,9 +63,14 @@ const WhatNewAtNeuralHQ = () => {
       </button>
 
       {/* Content Container */}
-      <div className="container mx-auto px-4 w-full md:max-w-[90vw]  ">
+      <div
+        className="container mx-auto px-4 w-full md:max-w-[90vw]  "
+        data-scroll
+        data-scroll-speed=".2"
+        data-scroll-delay=".1"
+      >
         {/* Header Section */}
-        <div className="flex w-full justify-between items-center mb-16 md:max-w-[80vw] mx-auto  ">
+        <div className="flex w-full justify-between items-center md:4  md:max-w-[80vw] mx-auto  ">
           <h1 className="font-quicksand font-semibold text-[4.5vw] md:text-[3.33vw] leading-[1.3] md:leading-[64px]">
             <span className="text-[#6366F1]">What&apos;s new</span> at Neuralhq?
           </h1>
@@ -66,7 +78,12 @@ const WhatNewAtNeuralHQ = () => {
         </div>
 
         {/* Carousel Section */}
-        <div className="w-full relative overflow-hidden">
+        <div
+          className="w-full relative overflow-hidden "
+          data-scroll
+          data-scroll-speed=".2"
+          data-scroll-delay=".1"
+        >
           <div className="flex items-center justify-center w-full md:min-h-[80vh] md:max-w-[80vw] mx-auto ">
             <div className="flex items-center justify-center gap-x-5  h-[72vh] ">
               {visiblePosts.map((post, idx) => (

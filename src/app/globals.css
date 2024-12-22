@@ -124,12 +124,3 @@ html.has-scroll-dragging {
   cursor: grab;
 }
 
-/* Add these if not already present */
-[data-scroll-direction="horizontal"] {
-  will-change: transform;
-}
-
-.has-scroll-smooth [data-scroll-section] {
-  will-change: transform;
-}
-

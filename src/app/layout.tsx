@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Quicksand } from "next/font/google";
 import { LocomotiveScrollProvider } from "./context/LocomotiveScrollContext";
-
+import { AnimationProvider } from "./context/AnimationContext";
 const quicksand = Quicksand({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
@@ -30,9 +30,11 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${quicksand.variable} `}>
       <body className="font-quicksand  antialiased">
-        <LocomotiveScrollProvider>
-          <main data-scroll-container>{children}</main>
-        </LocomotiveScrollProvider>
+        <AnimationProvider>
+          <LocomotiveScrollProvider>
+            <main data-scroll-container>{children}</main>
+          </LocomotiveScrollProvider>
+        </AnimationProvider>
       </body>
     </html>
   );
