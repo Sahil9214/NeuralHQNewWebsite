@@ -7,7 +7,6 @@ import { useInView } from "../../hooks/useInView";
 import { TransformingSectionThreshold } from "../../utils/Constants/AnimationConstant";
 import { cards } from "../../utils/Constants/TransformingSection";
 import { useLocomotiveScroll } from "@/app/context/LocomotiveScrollContext";
-import { AnimatedSection } from "@/app/utils/AnimationSection";
 
 export const TransformingSection = () => {
   const [ref, isInView] = useInView({
@@ -29,6 +28,7 @@ export const TransformingSection = () => {
     <div
       data-scroll-section
       className="h-full lg:h-screen w-full md:max-w-[90vw] mx-auto flex items-center justify-center"
+      style={{ zIndex: 10 }}
     >
       <main
         ref={ref as unknown as React.RefObject<HTMLElement>}
@@ -62,13 +62,33 @@ export const TransformingSection = () => {
         </div>
 
         <motion.div
-          className="grid sm:grid-cols-2 lg:grid-cols-3 gap-12 mt-8 lg:mt-2 "
+          className="grid sm:grid-cols-2 lg:grid-cols-3 gap-12 mt-8 lg:mt-2"
+          variants={{
+            hidden: { opacity: 0 },
+            visible: {
+              opacity: 1,
+              transition: { staggerChildren: 0.2 },
+            },
+          }}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
           data-scroll
           data-scroll-speed={0.05}
           data-scroll-delay={0.1}
         >
           {cards.map((card, index) => (
-            <AnimatedSection key={index} delay={index * 0.2}>
+            <motion.div
+              key={index}
+              variants={{
+                hidden: { opacity: 0, y: 50 },
+                visible: {
+                  opacity: 1,
+                  y: 0,
+                  transition: { duration: 0.5 },
+                },
+              }}
+            >
               <CardWithLocoAnimation
                 card={card}
                 index={index}
@@ -76,7 +96,7 @@ export const TransformingSection = () => {
                 isLargeScreen={isLargeScreen}
                 isInView={!!isInView}
               />
-            </AnimatedSection>
+            </motion.div>
           ))}
         </motion.div>
       </main>
@@ -113,7 +133,7 @@ const CardWithLocoAnimation: React.FC<CardProps> = ({
       whileHover={{ scale: 1.05 }}
       className="space-y-4 bg-white shadow-lg rounded-lg overflow-hidden"
     >
-      <div className="p-6">
+      <div className="py-6 px-4">
         <h2 className="text-lg sm:text-xl lg:text-[1.4vw] leading-8 font-normal text-center mb-6">
           {card.title}
         </h2>
@@ -129,7 +149,7 @@ const CardWithLocoAnimation: React.FC<CardProps> = ({
             </p>
           </div>
         </div>
-        <p className="text-base lg:text-[1.2vw] xl:text-[1vw] xl:mt-[1.7vw] 2xl:mt-[1.7vw] leading-7 text-gray-600">
+        <p className="text-base lg:text-[1vw] xl:text-[0.9vw] xl:mt-[1.7vw] 2xl:mt-[1.7vw] leading-7 text-gray-600 text-w">
           {card.description}
         </p>
       </div>

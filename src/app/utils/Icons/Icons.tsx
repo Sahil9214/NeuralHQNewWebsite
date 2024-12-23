@@ -3,7 +3,7 @@ import Image from "next/image";
 export const ModelTraining = [
   ({ className }: { className?: string }) => (
     <Image
-      src="/assets/Images/hsbc_symbol.png.png"
+      src="/assets/Images/hsbc_symbol.png"
       height={84}
       width={84}
       className={className}
@@ -14,7 +14,7 @@ export const ModelTraining = [
   // JAX Logo
   ({ className }: { className?: string }) => (
     <Image
-      src="/assets/Images/hsbc_symbol.png.png"
+      src="/assets/Images/hsbc_symbol.png"
       height={84}
       width={84}
       className={className}

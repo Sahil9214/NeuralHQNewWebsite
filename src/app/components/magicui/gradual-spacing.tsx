@@ -1,13 +1,14 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
-import { AnimatePresence, motion, Variants } from "framer-motion";
+import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 interface GradualSpacingProps {
   text: string;
   duration?: number;
   delayMultiple?: number;
-  framerProps?: Variants;
+  framerProps?: any;
   className?: string;
 }
 
@@ -23,21 +24,18 @@ export function GradualSpacing({
 }: GradualSpacingProps) {
   return (
     <div className="flex justify-center">
-      <AnimatePresence>
-        {text.split("").map((char, i) => (
-          <motion.span
-            key={i}
-            initial="hidden"
-            animate="visible"
-            exit="hidden"
-            variants={framerProps}
-            transition={{ duration, delay: i * delayMultiple }}
-            className={cn("drop-shadow-sm", className)}
-          >
-            {char === " " ? <span>&nbsp;</span> : char}
-          </motion.span>
-        ))}
-      </AnimatePresence>
+      {text.split("").map((char, i) => (
+        <motion.span
+          key={i}
+          initial="hidden"
+          animate="visible"
+          variants={framerProps}
+          transition={{ duration, delay: i * delayMultiple }}
+          className={cn("drop-shadow-sm", className)}
+        >
+          {char === " " ? <span>&nbsp;</span> : char}
+        </motion.span>
+      ))}
     </div>
   );
 }
