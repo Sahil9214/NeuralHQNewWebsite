@@ -10,15 +10,16 @@ export const teamMembers = [
     imageUrl: "/assets/Images/revantAboutHome.png",
   },
   {
-    name: "Rushikesh Bhomale",
-    role: "Data Engineer",
-    imageUrl: "/assets/Images/rushikeshAboutHome.png",
-  },
-  {
     name: "Utkarsh Singhal",
     role: "Software Engineer",
     imageUrl: "/assets/Images/utkarshAboutHome.png",
   },
+  {
+    name: "Rushikesh Bhomale",
+    role: "Data Engineer",
+    imageUrl: "/assets/Images/rushikeshAboutHome.png",
+  },
+
   {
     name: "Deependra Kumar",
     role: "Software Engineer",
