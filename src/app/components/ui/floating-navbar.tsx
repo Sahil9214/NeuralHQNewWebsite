@@ -74,8 +74,7 @@ export const FloatingNav = ({
   if (!isMounted) {
     return null;
   }
-  console.log(window.innerWidth, "innerWidth");
-  console.log(isLargeScreen, "isLargeScreen");
+
   return (
     <>
       <motion.div

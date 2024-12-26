@@ -1,6 +1,6 @@
 "use client";
 
-import { AnimatePresence, motion, Variants } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 
@@ -75,7 +75,7 @@ export function HyperText({
       className="flex scale-100 cursor-default overflow-hidden py-2"
       onMouseEnter={triggerAnimation}
     >
-      <AnimatePresence mode="wait">
+      <motion.div initial="hidden" animate="visible" className="flex">
         {displayText.map((letter, i) => (
           <motion.span
             key={i}
@@ -85,7 +85,7 @@ export function HyperText({
             {letter}
           </motion.span>
         ))}
-      </AnimatePresence>
+      </motion.div>
     </div>
   );
 }

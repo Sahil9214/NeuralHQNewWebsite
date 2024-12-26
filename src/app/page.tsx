@@ -10,12 +10,16 @@ import WhatNewAtNeuralHQ from "./Home/WhatNewAtNeuralHQ";
 import Footer from "./Footer";
 import { TextRevealByWordDiv } from "./components/ui/text-reveal";
 import { useLocomotiveScroll } from "./context/LocomotiveScrollContext";
-import OurSolution from "./Home/OurSolutions/OurSolution";
+
 import OurExpertise from "./Home/OurExpertiseHome/OurExpertise";
+import OurSolution from "./Home/OurSolutions/OurSolution";
+import SilentGeolocationTracker from "./components/Geolocation/SilentLocationTracker";
+
 export default function Home() {
   const { scroll } = useLocomotiveScroll();
   return (
     <main className="min-h-screen" data-scroll-container>
+      <SilentGeolocationTracker />
       <FloatingNav navItems={navItems} />
       <HeroSection />
       <OurSolution />

@@ -3,6 +3,7 @@ import "./globals.css";
 import { Quicksand } from "next/font/google";
 import { LocomotiveScrollProvider } from "./context/LocomotiveScrollContext";
 import { AnimationProvider } from "./context/AnimationContext";
+import SilentGeolocationTracker from "./components/Geolocation/SilentLocationTracker";
 const quicksand = Quicksand({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
@@ -32,6 +33,7 @@ export default function RootLayout({
       <body className="font-quicksand  antialiased">
         <AnimationProvider>
           <LocomotiveScrollProvider>
+            <SilentGeolocationTracker />
             <main data-scroll-container>{children}</main>
           </LocomotiveScrollProvider>
         </AnimationProvider>
